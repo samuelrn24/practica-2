@@ -72,3 +72,41 @@ total_value([], 0).
 total_value([vehicle(_, _, _, Price, _)|Rest], Total) :-
     total_value(Rest, RestTotal),
     Total is Price + RestTotal.
+
+%------
+%Tests
+%------
+
+:- begin_tests(test_cases).
+
+%List all Toyota SUV references priced under $30,000.
+
+test(case1):-
+    findall(
+            Ref,
+            (
+                vehicle(toyota, Ref, suv, _, _),
+                meet_budget(Ref, 30000)
+            ),
+            L
+        ),
+        L = [rav4, c_hr].
+
+%Show Ford vehicles grouped by type and year using bagof/3
+
+test(case2):-
+    bagof(
+        Ref,
+        vehicle(ford, Ref, _, _, _),
+        L
+    ),
+    L = [mustang, explorer, ecosport, fusion, fiesta].
+
+%Calculate the total value of an inventory filtered by type “Sedan” without exceeding $500,000.
+
+test(case3) :-
+    generate_report(_, sedan, 1000000, Result),
+    total_value(Result, Total),
+    Total =< 500000.
+
+:- end_tests(test_cases).
