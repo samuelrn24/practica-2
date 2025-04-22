@@ -7,6 +7,11 @@ Fecha de entrega: *21/04/2025*
 
 Universidad EAFIT
 
+## Video
+
+[Aqui se encuentra el video de la explicación del programa
+](https://www.loom.com/share/c0c311126ca24c3581bf88669824b0c9?sid=08e97bab-cd9d-4ef5-884c-da4118381855)
+
 ## Manual de uso
 
 ### Lista de comandos con ejemplos
@@ -85,8 +90,3 @@ Genera un reporte con los vehiculos de cierta marca y tipo, cuyo precio no super
 	R = [vehicle(honda, crv, suv, 32000, 2020),
      	vehicle(honda, hrv, suv, 28000, 2022),
      	vehicle(honda, pilot, suv, 34000, 2021)].
-
-
-
-
-
