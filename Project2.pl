@@ -52,8 +52,8 @@ meet_brand(Brand, Refs) :-
 
 %Lista de vehiculos en presupuesto (sumados<1,000,000)
 generate_report(Brand, Type, Budget, Result):-
-    findall
-        (vehicle(Brand, Reference, Type, Price, Year),
+    findall(
+        vehicle(Brand, Reference, Type, Price, Year),
         (
             vehicle(Brand, Reference, Type, Price, Year),
             Price =< Budget,
